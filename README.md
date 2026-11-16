@@ -7,6 +7,15 @@
 
 ---
 
+## 界面预览
+
+![主界面](docs/screenshot.png)
+
+<sub>左侧为 6 个测点的实时值（原始值 / 工程值 / 状态），右侧为选中测点的趋势曲线；
+下方告警面板记录了两次温度越限（84.10℃ / 85.30℃）及自动生成的诊断建议。</sub>
+
+---
+
 ## 项目亮点
 
 1. **手写 Modbus 协议栈，不依赖 Qt SerialBus**
@@ -44,15 +53,6 @@
    初版将 `QTcpSocket` 在主线程创建、采集线程使用，触发
    `QSocketNotifier: Socket notifiers cannot be enabled or disabled from another thread`。
    根因是 `QTcpSocket` 的线程亲和性，改为在采集线程内创建/销毁后解决。
-
----
-
-## 界面预览
-
-![主界面](docs/screenshot.png)
-
-<sub>左侧为 6 个测点的实时值（原始值 / 工程值 / 状态），右侧为选中测点的趋势曲线；
-下方告警面板记录了两次温度越限（84.10℃ / 85.30℃）及自动生成的诊断建议。</sub>
 
 ---
 

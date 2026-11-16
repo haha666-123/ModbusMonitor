@@ -1,0 +1,27 @@
+# 统一换行符处理策略
+# 背景：之前 run.bat / deploy.bat 曾因编码与换行被 cmd 解析错，
+#       这里强制批处理文件使用 CRLF，避免在 Linux/macOS 上克隆后被改坏。
+
+* text=auto
+
+# 批处理脚本必须是 CRLF，否则 cmd 解析异常
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+
+# 源码与文档统一 LF
+*.cpp   text eol=lf
+*.h     text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.cmake text eol=lf
+CMakeLists.txt text eol=lf
+
+# 二进制文件不做换行转换
+*.exe   binary
+*.dll   binary
+*.a     binary
+*.pdb   binary
+*.png   binary
+*.jpg   binary
+*.ico   binary
+*.db    binary

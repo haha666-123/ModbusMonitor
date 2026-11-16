@@ -1,0 +1,29 @@
+# build output
+build/
+build_log.txt
+build_log.txt.err
+*.exe
+*.dll
+*.a
+*.o
+*.obj
+
+# Qt / CMake generated
+*_autogen/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.ninja
+.ninja_deps
+.ninja_log
+
+# local data
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# IDE
+.vscode/
+.vs/
+*.user
